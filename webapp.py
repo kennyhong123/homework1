@@ -21,6 +21,8 @@ def render_response():
         reply = float(request.args['miles'])*1.60934
     elif 'Celcius' in request.args:
         reply = float(request.args['Celcius'])*1.8+32
+    else 'lbs' in request.args:
+        reply = float(request.args['lbs'])*.0.453592
     return render_template('response.html', response = reply)
 if __name__=="__main__":
     app.run(debug=False, port=54321)
