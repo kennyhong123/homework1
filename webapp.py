@@ -9,11 +9,8 @@ def render_main():
 @app.route("/response")
 def render_response():
     miles= float(request.args['miles'])
-	x=1
-    if miles == 0:
-        reply = 0
-    else:
-        reply = miles*0.621371
+    if 'miles' in request.args:
+        reply = float(request.args['miles'])*1.60934
     return render_template('response.html', response = reply)
 if __name__=="__main__":
     app.run(debug=False, port=54321)
