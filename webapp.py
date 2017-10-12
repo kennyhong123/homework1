@@ -18,10 +18,11 @@ def render_lbs():
 @app.route("/response")
 def render_response():
     miles= float(request.args['miles'])
+    Celcius = float(request.args['Celcius'])
     if 'miles' in request.args:
         reply = float(request.args['miles'])*1.60934
-    elif 'Celcius' in request.args['Celcius']
-        reply = (float(request.args['Celcius'])*1.8)+32
+    elif 'Celcius' in request.args
+        reply = float(request.args['Celcius'])*1.8+32
     return render_template('response.html', response = reply)
 if __name__=="__main__":
     app.run(debug=False, port=54321)
