@@ -19,7 +19,7 @@ def render_lbs():
 def render_response():
     if 'miles' in request.args:
         reply = float(request.args['miles'])*1.60934
-    elif 'Celcius' in request.args:
+    if 'Celcius' in request.args:
         reply = float(request.args['Celcius'])*1.8+32
     if 'lbs' in request.args:
         reply = float(request.args['lbs'])*0.453592
